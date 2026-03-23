@@ -96,9 +96,40 @@ nav.scrolled {
   mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
 }
 .hero-content {
-  max-width: 900px; text-align: center;
+  max-width: 1000px;
+  width: 100%;
   position: relative; z-index:1;
   animation: fadeUp 1s ease-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3.5rem;
+}
+.hero-left {
+  flex: 0 0 auto;
+}
+.hero-profile {
+  width: 250px; height: 310px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.hero-right {
+  flex: 1;
+  text-align: left;
+}
+.hero-right .hero-badge { margin-bottom: 1.2rem; }
+.hero-right .hero-desc { margin: 0 0 1.5rem; }
+.hero-right .hero-contact { justify-content: flex-start; }
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.8rem;
+  font-size: 0.88rem;
+  color: var(--text-dim);
 }
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(40px); }
