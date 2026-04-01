@@ -667,7 +667,75 @@ footer p {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-</style>
+
+    /* ===== AWARDS SECTION ===== */
+    #awards { padding: 5rem 2rem; background: var(--bg-soft); }
+    .award-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.2s;
+      margin-bottom: 1rem;
+    }
+    .award-card:hover { box-shadow: 0 8px 32px rgba(59,130,246,0.10); transform: translateY(-2px); }
+    .award-header-row { display: flex; align-items: center; gap: 1rem; }
+    .award-icon { font-size: 2rem; }
+    .award-info { flex: 1; }
+    .award-name { font-size: 1.15rem; font-weight: 700; color: var(--text-bright); }
+    .award-org { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.2rem; }
+    .award-date-badge {
+      display: inline-block; margin-top: 0.4rem;
+      background: var(--accent); color: #fff;
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.15rem 0.7rem; border-radius: 20px;
+    }
+    .award-expand-hint { font-size: 0.8rem; color: var(--text-dim); white-space: nowrap; transition: transform 0.3s; }
+    .award-card.expanded .award-expand-hint { transform: rotate(180deg); }
+    .award-detail-body { display: none; margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    .award-card.expanded .award-detail-body { display: block; }
+    .award-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    @media (max-width: 700px) { .award-detail-grid { grid-template-columns: 1fr; } }
+    .award-desc h4 { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin: 1rem 0 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .award-desc p { font-size: 0.9rem; color: var(--text); line-height: 1.6; }
+    /* ===== GITHUB BUTTON ===== */
+    .github-link-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.4rem;
+      padding: 0.6rem 1.4rem;
+      background: #0d1117;
+      color: #fff !important;
+      border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem;
+      text-decoration: none !important;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .github-link-btn:hover { background: #1a2332; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    .github-link-btn svg { width: 18px; height: 18px; fill: currentColor; }
+    /* ===== TECH BADGES ===== */
+    .tech-badge-section { margin-top: 2rem; }
+    .tech-badge-section h4 { font-size: 0.8rem; color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.7rem; }
+    .tech-badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .tbadge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.3rem 0.8rem; border-radius: 6px;
+      font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .tbadge-aws { background:#FF9900;color:#fff; }
+    .tbadge-docker { background:#2496ED;color:#fff; }
+    .tbadge-linux { background:#FCC624;color:#000; }
+    .tbadge-python { background:#3776AB;color:#fff; }
+    .tbadge-java { background:#ED8B00;color:#fff; }
+    .tbadge-spring { background:#6DB33F;color:#fff; }
+    .tbadge-mysql { background:#4479A1;color:#fff; }
+    .tbadge-git { background:#F05032;color:#fff; }
+    .tbadge-vmware { background:#607078;color:#fff; }
+    .tbadge-react { background:#61DAFB;color:#000; }
+    .tbadge-pytorch { background:#EE4C2C;color:#fff; }
+  </style>
 </head>
 <body>
 
@@ -742,13 +810,71 @@ footer p {
 </section>
 
 <!-- EXPERIENCE -->
+<!-- AWARDS -->
+<section id="awards">
+  <div class="reveal">
+    <div class="section-label">// Awards</div>
+    <h2 class="section-title">수상 내역</h2>
+  </div>
+  <div class="reveal" style="max-width:900px;margin:0 auto;padding:0 1rem;">
+    <div class="award-card" onclick="this.classList.toggle('expanded')">
+      <div class="award-header-row">
+        <div class="award-icon">🏆</div>
+        <div class="award-info">
+          <div class="award-name">2024 인하 인공지능 챘린지 우수상 (학부생 부문)</div>
+          <div class="award-org">인하대학교 인공지능융합연구센터 &amp; BK 산업융합형 차세대 인공지능 혁신인재 교육연구단</div>
+          <div class="award-date-badge">2024.08.28</div>
+        </div>
+        <div class="award-expand-hint">↓ 상세보기</div>
+      </div>
+      <div class="award-detail-body">
+        <div class="award-detail-grid">
+          <div class="award-desc">
+            <h4>대회 개요</h4>
+            <p>한국어 경제 뉴스 데이터를 기반으로 복잡한 기사에서 핵심 정보를 식별·추출하고 질의응답 성능을 향상시키는 인공지능 알고리즘 개발 대회입니다.</p>
+            <h4>주제</h4>
+            <p>한국 경제 기사 분석 및 질의응답 (Korean Financial News QA)</p>
+            <h4>팀 &amp; 역할</h4>
+            <p>팀명 FInhAI (팀원 3인) — LLaMA3 기반 모델을 활용해 금융·경제 기사에 특화된 분석 및 질의응답 성능 개선, 실세계 자연어실리 기술의 응용 가능성 검증</p>
+            <h4>주관 / 후원</h4>
+            <p>주관: 인공지능융합연구센터, BK 교육연구단 &middot; 후원: 포티투마루(42MARU) &middot; 운영: 데이콘</p>
+          </div>
+          <div class="award-cert">
+            <img src="images/award-cert.jpg" alt="상장 - 2024 인하 인공지능 챘린지 우수상" style="width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.18);cursor:zoom-in;" onclick="event.stopPropagation();openLightbox(this)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="reveal">
     <div class="section-label">// Experience</div>
     <h2 class="section-title">경험 타임라인</h2>
   </div>
   <div class="timeline reveal">
-    <div class="timeline-item">
+        <div class="timeline-item">
+      <div class="timeline-date">2026.02<br>–2026.03</div>
+      <div class="timeline-content">
+        <h3>VMware vSphere 기반 사설 클라우드 인프라 구축</h3>
+        <div class="timeline-subtitle">ESXi 클러스터 · vCenter · 공유 스토리지 · HA/DRS · 고가용성 웹서뱄스 End-to-End 구현</div>
+        <span class="timeline-type">팀 프로젝트</span>
+        <ul class="timeline-details">
+          <li>전체 아키텍처 설계 및 Aruba Switch L2/L3 네트워크 토폴로지 확정, IP 대역 할당</li>
+          <li>ESXi 호스트 설치·vCenter 인증·DNS/SSO 구성, iSCSI VMFS 6 데이터스토어 구성</li>
+          <li>DRS(Fully Automated)·HA 클러스터 고가용성 구성 및 호스트 장애 복구 테스트 완료</li>
+        </ul>
+        <div class="tag-row" style="margin-top:0.6rem;flex-wrap:wrap;gap:0.3rem;">
+          <span class="tag">VMware ESXi 8.x</span>
+          <span class="tag green">vCenter Server</span>
+          <span class="tag purple">HA / DRS</span>
+          <span class="tag">iSCSI / VMFS</span>
+          <span class="tag green">Aruba Switch</span>
+        </div>
+      </div>
+    </div>
+<div class="timeline-item">
       <div class="timeline-date">2026.01</div>
       <div class="timeline-content">
         <h3>n8n 기반 Java 코드 리뷰·리팩토링 자동화 봇</h3>
@@ -761,20 +887,7 @@ footer p {
         </ul>
       </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2026.01</div>
-      <div class="timeline-content">
-        <h3>ELK 기반 금융 고객 인사이트 분석</h3>
-        <div class="timeline-subtitle">금융 고객 데이터 적재 및 Kibana 시각화 기반 인사이트 도출</div>
-        <span class="timeline-type">팀 프로젝트</span>
-        <ul class="timeline-details">
-          <li>데이터 전처리 및 적재 흐름 구성 (DuckDB 활용)</li>
-          <li>Elasticsearch 인덱스 설계 및 데이터 적재</li>
-          <li>Kibana 대시보드 구성 및 지표 기반 인사이트 정리</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
+        <div class="timeline-item">
       <div class="timeline-date">2025.03<br>–2025.06</div>
       <div class="timeline-content">
         <h3>동형암호 기반 얼굴 인증 시스템</h3>
@@ -897,6 +1010,12 @@ footer p {
         <div class="retro-block" style="margin-top:0.5rem;">
           <h5>💡 회고 — Pinecone-Gemini 연동 불안정</h5>
           <p>벡터 Insert와 Retrieve 역할을 분리한 2단계 구조로 워크플로우를 재설계하여 안정성 확보</p>
+        </div>
+        <div style="margin-top:1.4rem;">
+          <a href="https://github.com/minykang/vibecode-rag-refactor" target="_blank" class="github-link-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub Repository
+          </a>
         </div>
       </div>
     </div>
@@ -1023,6 +1142,35 @@ footer p {
       <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:80%"></div></div></div>
     </div>
   </div>
+  <!-- TECH BADGES -->
+  <div class="reveal" style="max-width:900px;margin:2.5rem auto 0;padding:0 1rem;">
+    <div class="tech-badge-section">
+      <h4>Cloud / Infra</h4>
+      <div class="tech-badge-row">
+        <span class="tbadge tbadge-aws">☁️ AWS</span>
+        <span class="tbadge tbadge-vmware">🖥️ VMware ESXi</span>
+        <span class="tbadge tbadge-vmware">vCenter Server</span>
+        <span class="tbadge tbadge-docker">🐳 Docker</span>
+        <span class="tbadge tbadge-linux">🐧 Linux</span>
+      </div>
+      <h4>Language / AI</h4>
+      <div class="tech-badge-row">
+        <span class="tbadge tbadge-python">🐍 Python</span>
+        <span class="tbadge tbadge-java">☕ Java</span>
+        <span class="tbadge tbadge-pytorch">🔥 PyTorch</span>
+        <span class="tbadge tbadge-react">⚛️ React</span>
+      </div>
+      <h4>Data / Backend</h4>
+      <div class="tech-badge-row">
+        <span class="tbadge tbadge-spring">🌱 Spring Boot</span>
+        <span class="tbadge tbadge-mysql">📐 MySQL</span>
+        <span class="tbadge tbadge-git">🔀 Git</span>
+        <span class="tbadge" style="background:#CB3837;color:#fff;">📦 n8n</span>
+        <span class="tbadge" style="background:#005571;color:#fff;">🔍 Elasticsearch</span>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- OTHERS -->
