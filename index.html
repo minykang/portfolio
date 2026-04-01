@@ -669,7 +669,11 @@ footer p {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ===== AWARDS SECTION ===== */
-    #awards { padding: 5rem 2rem; background: var(--bg-soft); }
+    #awards { 
+      padding: 8rem 0;          /* 위아래 여백 */
+      background: var(--bg-soft); 
+      max-width: 100%;          /* 배경이 화면 끝까지 차도록 수정 */
+    }
     .award-card {
       background: var(--bg-card);
       border-radius: 16px;
@@ -811,43 +815,45 @@ footer p {
 
 <!-- EXPERIENCE -->
 <!-- AWARDS -->
-<section id="awards">
-  <div class="reveal">
-    <div class="section-label">// Awards</div>
-    <h2 class="section-title">수상 내역</h2>
-  </div>
-  <div class="reveal" style="max-width:900px;margin:0 auto;padding:0 1rem;">
-    <div class="award-card" onclick="this.classList.toggle('expanded')">
-      <div class="award-header-row">
-        <div class="award-icon">🏆</div>
-        <div class="award-info">
-          <div class="award-name">2024 인하 인공지능 챘린지 우수상 (학부생 부문)</div>
-          <div class="award-org">인하대학교 인공지능융합연구센터 &amp; BK 산업융합형 차세대 인공지능 혁신인재 교육연구단</div>
-          <div class="award-date-badge">2024.08.28</div>
-        </div>
-        <div class="award-expand-hint">↓ 상세보기</div>
-      </div>
-      <div class="award-detail-body">
-        <div class="award-detail-grid">
-          <div class="award-desc">
-            <h4>대회 개요</h4>
-            <p>한국어 경제 뉴스 데이터를 기반으로 복잡한 기사에서 핵심 정보를 식별·추출하고 질의응답 성능을 향상시키는 인공지능 알고리즘 개발 대회입니다.</p>
-            <h4>주제</h4>
-            <p>한국 경제 기사 분석 및 질의응답 (Korean Financial News QA)</p>
-            <h4>팀 &amp; 역할</h4>
-            <p>팀명 FInhAI (팀원 3인) — LLaMA3 기반 모델을 활용해 금융·경제 기사에 특화된 분석 및 질의응답 성능 개선, 실세계 자연어실리 기술의 응용 가능성 검증</p>
-            <h4>주관 / 후원</h4>
-            <p>주관: 인공지능융합연구센터, BK 교육연구단 &middot; 후원: 포티투마루(42MARU) &middot; 운영: 데이콘</p>
+<section id="awards" class="bg-soft">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">// Awards</div>
+      <h2 class="section-title">수상 내역</h2>
+    </div>
+    
+    <div class="reveal" style="max-width:900px;margin:0 auto;padding:0 1rem;">
+      <div class="award-card" onclick="this.classList.toggle('expanded')">
+        <div class="award-header-row">
+          <div class="award-icon">🏆</div>
+          <div class="award-info">
+            <div class="award-name">2024 인하 인공지능 챌린지 우수상 (학부생 부문)</div>
+            <div class="award-org">인하대학교 인공지능융합연구센터 &amp; BK 산업융합형 차세대 인공지능 혁신인재 교육연구단</div>
+            <div class="award-date-badge">2024.08.28</div>
           </div>
-          <div class="award-cert">
-            <img src="images/award-cert.jpg" alt="상장 - 2024 인하 인공지능 챘린지 우수상" style="width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.18);cursor:zoom-in;" onclick="event.stopPropagation();openLightbox(this)" />
+          <div class="award-expand-hint">↓ 상세보기</div>
+        </div>
+        <div class="award-detail-body">
+          <div class="award-detail-grid">
+            <div class="award-desc">
+              <h4>대회 개요</h4>
+              <p>한국어 경제 뉴스 데이터를 기반으로 복잡한 기사에서 핵심 정보를 식별·추출하고 질의응답 성능을 향상시키는 인공지능 알고리즘 개발 대회입니다.</p>
+              <h4>주제</h4>
+              <p>한국 경제 기사 분석 및 질의응답 (Korean Financial News QA)</p>
+              <h4>팀 &amp; 역할</h4>
+              <p>팀명 FInhAI (팀원 3인) — LLaMA3 기반 모델을 활용해 금융·경제 기사에 특화된 분석 및 질의응답 성능 개선, 실세계 자연어처리 기술의 응용 가능성 검증</p>
+              <h4>주관 / 후원</h4>
+              <p>주관: 인공지능융합연구센터, BK 교육연구단 &middot; 후원: 포티투마루(42MARU) &middot; 운영: 데이콘</p>
+            </div>
+            <div class="award-cert">
+              <img src="images/award-cert.jpg" alt="상장 - 2024 인하 인공지능 챌린지 우수상" style="width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.18);cursor:zoom-in;" onclick="event.stopPropagation();openLightbox(this.src)" />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section id="experience">
   <div class="reveal">
     <div class="section-label">// Experience</div>
@@ -924,11 +930,64 @@ footer p {
     <h2 class="section-title">프로젝트 상세</h2>
   </div>
   <div class="projects-grid reveal">
-
-    <!-- Project 1: 동형암호 -->
+    
+    <!-- Project 4: VMware vSphere -->
     <div class="project-card" onclick="this.classList.toggle('expanded')">
       <div class="project-header">
         <div class="project-num">PROJECT 01</div>
+        <h3>VMware vSphere 기반 사설 클라우드 인프라 구축</h3>
+        <div class="tag-row">
+          <span class="tag">ESXi</span>
+          <span class="tag green">vCenter</span>
+          <span class="tag purple">HA / DRS</span>
+        </div>
+        <p class="project-desc">단일 장애점을 제거한 고가용성 데이터센터를 직접 설계·구축한 팀 프로젝트. ESXi 클러스터 · vCenter · 공유 스토리지 · HA/DRS · 고가용성 웹서비스까지 End-to-End 구현</p>
+        
+        <div class="project-gallery">
+          <img src="images/vmware-arch.png" alt="VMware vSphere 인프라 아키텍처 구성도" onclick="event.stopPropagation();openLightbox(this.src)">
+        </div>
+
+        <div class="project-expand-hint">↓ 클릭하여 상세 보기</div>
+      </div>
+      <div class="project-detail">
+        <div class="detail-section"><h4>역할</h4><ul>
+          <li>전체 아키텍처 설계 및 팀별 IP 대역 할당, Aruba Switch 기반 L2/L3 네트워크 토폴로지 확정</li>
+          <li>ESXi 호스트 설치(USB 부팅·DCUI) 및 vCenter 클러스터 등록, DNS/SSO 구성</li>
+          <li>Windows Server iSCSI Target 설정 및 ESXi iSCSI Initiator 연결 → VMFS 6 데이터스토어 구성</li>
+          <li>Resource Pool · VAMI 백업 · DRS(Fully Automated) · HA 클러스터 고가용성 구성</li>
+          <li>OVF 템플릿 기반 Linux VM 배포 및 NFS 공유 스토리지 기반 고가용성 웹서비스 구축</li>
+        </ul></div>
+        <div class="detail-section"><h4>성과</h4><ul>
+          <li>Management / Storage / vMotion 트래픽 분리 설계로 네트워크 간섭 최소화</li>
+          <li>iSCSI(VMFS) 방식으로 분산 잠금 기반 데이터 무결성 및 VAAI 하드웨어 가속 확보</li>
+          <li>HA 장애 테스트: 호스트 강제 차단 후 관리자 개입 없이 VM 자동 복구 수십 초 내 확인</li>
+          <li>NFS 공유 웹서비스 3대 동일 콘텐츠 서비스 · 단일 파일 수정 시 즉시 전체 반영 검증</li>
+        </ul></div>
+        <div class="detail-section"><h4>트러블슈팅</h4><ul>
+          <li>NFS-Web03 Access Denied → SELinux Enforcing 차단 확인, Permissive 전환 + firewalld 중지로 해결</li>
+        </ul></div>
+        <div class="detail-section"><h4>기술 스택</h4>
+          <div class="tag-row" style="margin-top:0.5rem;flex-wrap:wrap;gap:0.4rem;">
+            <span class="tag">VMware ESXi 8.x</span>
+            <span class="tag green">vCenter Server</span>
+            <span class="tag purple">iSCSI / VMFS</span>
+            <span class="tag">NFS</span>
+            <span class="tag green">Aruba Switch</span>
+            <span class="tag purple">Windows Server 2022</span>
+          </div>
+        </div>
+        <div style="margin-top:1.4rem;">
+          <a href="https://github.com/minykang/vmware-virtualization-lab" target="_blank" class="github-link-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Project 1: 동형암호 -->
+    <div class="project-card" onclick="this.classList.toggle('expanded')">
+      <div class="project-header">
+        <div class="project-num">PROJECT 02</div>
         <h3>동형암호 기반 얼굴 인증 시스템</h3>
         <div class="tag-row">
           <span class="tag">LWE</span>
@@ -973,7 +1032,7 @@ footer p {
     <!-- Project 2: n8n -->
     <div class="project-card" onclick="this.classList.toggle('expanded')">
       <div class="project-header">
-        <div class="project-num">PROJECT 02</div>
+        <div class="project-num">PROJECT 03</div>
         <h3>n8n 기반 Java 코드 리뷰·리팩토링 자동화 봇</h3>
         <div class="tag-row">
           <span class="tag">n8n</span>
@@ -1023,7 +1082,7 @@ footer p {
     <!-- Project 3: AI 제조 -->
     <div class="project-card" onclick="this.classList.toggle('expanded')">
       <div class="project-header">
-        <div class="project-num">PROJECT 03</div>
+        <div class="project-num">PROJECT 04</div>
         <h3>인공지능 기반 제조 결함 탐지 연구</h3>
         <div class="tag-row">
           <span class="tag">ResNet</span>
@@ -1060,54 +1119,6 @@ footer p {
     </div>
 
 
-    <!-- Project 4: VMware vSphere -->
-    <div class="project-card" onclick="this.classList.toggle('expanded')">
-      <div class="project-header">
-        <div class="project-num">PROJECT 04</div>
-        <h3>VMware vSphere 기반 사설 클라우드 인프라 구축</h3>
-        <div class="tag-row">
-          <span class="tag">ESXi</span>
-          <span class="tag green">vCenter</span>
-          <span class="tag purple">HA / DRS</span>
-        </div>
-        <p class="project-desc">단일 장애점을 제거한 고가용성 데이터센터를 직접 설계·구축한 팀 프로젝트. ESXi 클러스터 · vCenter · 공유 스토리지 · HA/DRS · 고가용성 웹서비스까지 End-to-End 구현</p>
-        <div class="project-expand-hint">↓ 클릭하여 상세 보기</div>
-      </div>
-      <div class="project-detail">
-        <div class="detail-section"><h4>아키텍처</h4>
-          <img src="images/vmware-arch.png" alt="Team1 vSphere 인프라 구성도" style="width:100%;border-radius:12px;margin:1rem 0;cursor:zoom-in;" onclick="openLightbox(this)" />
-        </div>
-        <div class="detail-section"><h4>역할</h4><ul>
-          <li>전체 아키텍처 설계 및 팀별 IP 대역 할당, Aruba Switch 기반 L2/L3 네트워크 토폴로지 확정</li>
-          <li>ESXi 호스트 설치(USB 부팅·DCUI) 및 vCenter 클러스터 등록, DNS/SSO 구성</li>
-          <li>Windows Server iSCSI Target 설정 및 ESXi iSCSI Initiator 연결 → VMFS 6 데이터스토어 구성</li>
-          <li>Resource Pool · VAMI 백업 · DRS(Fully Automated) · HA 클러스터 고가용성 구성</li>
-          <li>OVF 템플릿 기반 Linux VM 배포 및 NFS 공유 스토리지 기반 고가용성 웹서비스 구축</li>
-        </ul></div>
-        <div class="detail-section"><h4>성과</h4><ul>
-          <li>Management / Storage / vMotion 트래픽 분리 설계로 네트워크 간섭 최소화</li>
-          <li>iSCSI(VMFS) 방식으로 분산 잠금 기반 데이터 무결성 및 VAAI 하드웨어 가속 확보</li>
-          <li>HA 장애 테스트: 호스트 강제 차단 후 관리자 개입 없이 VM 자동 복구 수십 초 내 확인</li>
-          <li>NFS 공유 웹서비스 3대 동일 콘텐츠 서비스 · 단일 파일 수정 시 즉시 전체 반영 검증</li>
-        </ul></div>
-        <div class="detail-section"><h4>트러블슈팅</h4><ul>
-          <li>NFS-Web03 Access Denied → SELinux Enforcing 차단 확인, Permissive 전환 + firewalld 중지로 해결</li>
-        </ul></div>
-        <div class="detail-section"><h4>기술 스택</h4>
-          <div class="tag-row" style="margin-top:0.5rem;flex-wrap:wrap;gap:0.4rem;">
-            <span class="tag">VMware ESXi 8.x</span>
-            <span class="tag green">vCenter Server</span>
-            <span class="tag purple">iSCSI / VMFS</span>
-            <span class="tag">NFS</span>
-            <span class="tag green">Aruba Switch</span>
-            <span class="tag purple">Windows Server 2022</span>
-          </div>
-        </div>
-        <div style="margin-top:1.2rem;">
-          <a href="https://github.com/minykang/vmware-virtualization-lab" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">→ GitHub Repository</a>
-        </div>
-      </div>
-    </div>
     <!-- /Project 4 -->
 
   </div>
@@ -1122,55 +1133,59 @@ footer p {
     <div class="section-label">// Skills</div>
     <h2 class="section-title">기술 스택</h2>
   </div>
+
   <div class="skills-categories reveal">
     <div class="skill-category">
+      <div class="skill-cat-title">Infra & DevOps</div>
+      <div class="skill-item"><span class="skill-name">Linux (CentOS/Ubuntu)</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:80%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">VMware vSphere</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Docker & Container</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:70%"></div></div></div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-title">Backend & Data</div>
+      <div class="skill-item"><span class="skill-name">Java / Spring Boot</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:75%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">SQL (SQLD 자격 보유)</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">ELK Stack / Kafka</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:60%"></div></div></div>
+    </div>
+
+    <div class="skill-category">
       <div class="skill-cat-title">Collaboration</div>
-      <div class="skill-item"><span class="skill-name">Notion</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:90%"></div></div></div>
-      <div class="skill-item"><span class="skill-name">Git & Github</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:70%"></div></div></div>
-      <div class="skill-item"><span class="skill-name">Slack</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:85%"></div></div></div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">OA</div>
-      <div class="skill-item"><span class="skill-name">Word</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:90%"></div></div></div>
-      <div class="skill-item"><span class="skill-name">Excel</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:80%"></div></div></div>
-      <div class="skill-item"><span class="skill-name">PowerPoint</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:90%"></div></div></div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">Programming</div>
-      <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:60%"></div></div></div>
-      <div class="skill-item"><span class="skill-name">Java</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:55%"></div></div></div>
-      <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:80%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Git & Github</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:80%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">n8n Automation</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Notion (Docs)</span><div class="skill-bar-wrap"><div class="skill-bar" style="--w:90%"></div></div></div>
     </div>
   </div>
-  <!-- TECH BADGES -->
+
   <div class="reveal" style="max-width:900px;margin:2.5rem auto 0;padding:0 1rem;">
     <div class="tech-badge-section">
       <h4>Cloud / Infra</h4>
       <div class="tech-badge-row">
         <span class="tbadge tbadge-aws">☁️ AWS</span>
         <span class="tbadge tbadge-vmware">🖥️ VMware ESXi</span>
-        <span class="tbadge tbadge-vmware">vCenter Server</span>
+        <span class="tbadge tbadge-vmware">⚙️ vCenter Server</span>
         <span class="tbadge tbadge-docker">🐳 Docker</span>
         <span class="tbadge tbadge-linux">🐧 Linux</span>
       </div>
+
       <h4>Language / AI</h4>
       <div class="tech-badge-row">
-        <span class="tbadge tbadge-python">🐍 Python</span>
         <span class="tbadge tbadge-java">☕ Java</span>
+        <span class="tbadge tbadge-python">🐍 Python</span>
         <span class="tbadge tbadge-pytorch">🔥 PyTorch</span>
         <span class="tbadge tbadge-react">⚛️ React</span>
       </div>
+
       <h4>Data / Backend</h4>
       <div class="tech-badge-row">
         <span class="tbadge tbadge-spring">🌱 Spring Boot</span>
         <span class="tbadge tbadge-mysql">📐 MySQL</span>
-        <span class="tbadge tbadge-git">🔀 Git</span>
-        <span class="tbadge" style="background:#CB3837;color:#fff;">📦 n8n</span>
         <span class="tbadge" style="background:#005571;color:#fff;">🔍 Elasticsearch</span>
+        <span class="tbadge" style="background:#CB3837;color:#fff;">📦 n8n</span>
+        <span class="tbadge tbadge-git">🔀 Git</span>
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- OTHERS -->
